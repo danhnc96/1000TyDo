@@ -1,0 +1,36 @@
+﻿.aaaa {
+    float: left;
+    padding-top: 40px;
+}
+
+.tieude1 h2 {
+    margin-left: 200px;
+    font-size: 1.9em;
+    color: #ff0000;
+}
+
+.thongtintin {
+    font-size: 1.0em;
+    margin-left: 30px;
+}
+
+.menu11111 {
+    float: right;
+    margin-right: 100px;
+    padding-top: 40px;
+}
+
+.bbbb input {
+    width: 400px;
+    height: 30px;
+}
+
+.tieude h1 {
+    color: #ff0000;
+    font-size: 1.9em;
+}
+
+.bbbb textarea {
+    width: 400px;
+    height: 100px;
+}
