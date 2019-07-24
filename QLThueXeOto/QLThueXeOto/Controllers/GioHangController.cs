@@ -85,7 +85,7 @@ namespace QLThueXeOto.Controllers
             }
             if (listGioHang.Count == 0)
             {
-                return RedirectToAction("Index","Homme");
+                return RedirectToAction("Index","Home");
             }
             return RedirectToAction("GioHang");
         }
