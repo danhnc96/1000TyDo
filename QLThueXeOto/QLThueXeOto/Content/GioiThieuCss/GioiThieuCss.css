@@ -1,0 +1,73 @@
+﻿.GioiThieu{
+    width:100%;
+}
+.GioiThieu-content {
+    width: 100%;
+    padding-top:50px;
+}
+#slider {
+    float:right;
+    width: 750px;
+    height: 300px;
+    padding-right:60px;
+}
+.GoiThieu-rigth {
+    padding-left:50px;
+    width: 29%;
+    box-shadow: 5px 5px 1px #B06010;
+    border: 1px solid rgba(87,221,152,.37);
+    border: 2px solid #ffffff;
+}
+.GoiThieu-rigth h1{
+    font-size: 2.5em;
+    text-align:center;
+}
+.GioiThieu-title {
+    width:100%;
+    height: 770px;
+    background-color: #faefef;
+}
+.gioithieu-info h1{
+    padding-top:30px;
+    font-size:2em;
+    text-align:center;
+}
+.gioithieu-infond {
+    width:100%; 
+}
+.gioithieu-img img {
+    float: left;
+    width: 750px;
+    height: 280px;
+    padding-left:50px;
+}
+.Gioithieu-infond {
+    width:100%;
+
+}
+.Gioithieu-infond h2{
+    text-align:center;
+    padding-right:30px;
+}
+.Gioithieu-infond p {
+    padding-left:820px;
+    padding-right:50px;
+    line-height:22px;
+}
+.GioiThieu-Xecuoi{
+    padding-top:40px;
+}
+.GioiThieu-cuoi img {
+    float: right;
+    width: 750px;
+    height: 320px;
+    padding-right: 50px;
+}
+.GioiThieuCuoi-info h2{
+    text-align:center;
+}
+.GioiThieuCuoi-info p{
+    padding-left:50px;
+    padding-right:830px;
+	
+}

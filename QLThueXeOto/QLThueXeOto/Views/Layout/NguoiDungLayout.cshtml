@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/NguoiDungLayoutCss/MenuCuon.css" rel="stylesheet" />
+    <script src="~/Content/NguoiDungLayoutCss/MenuCuonJS.js"></script>
+    <link href="~/Content/NguoiDungLayoutCss/NguoiDungLayoutCss.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrap">
+        <!--header-->
+        <div class="header">
+            <div class="flash">
+                <div class="header-content">
+                    <i class="fa fa-phone"></i>
+                    <span>0328327335</span>
+                    <i class="fa fa-envelope-o"></i>
+                    <span>danhnc96@gmail.com</span>
+                </div>
+                <div class="txtTimKiem">
+                    @using (Html.BeginForm("KetQuaTimKiem", "TimKiem", FormMethod.Post))
+                    {
+                        @Html.TextBox("txtTimKiem", "", htmlAttributes: new { @class = "TexBoxTimKiem", @placeholder = "Nhập vào từ khóa cần tìm" })
+                        <div class="divtimkiem">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                    }
+                </div>
+                @*Tao div đăng ký đăng nhập*@
+                <div class="dangkydangnhap">
+                    <i class="fa fa-sign-in"></i>
+                    <span>@Html.ActionLink("Đăng Ký", "DangKy", "NguoiDung")</span>
+                    <i class="fa fa-unlock"></i>
+                    <span>@Html.ActionLink("Đăng Nhập", "DangNhap", "NguoiDung")</span>
+                </div>
+            </div>
+        </div>
+        <!--end header-->
+        <!--Menu-->
+        <div id="navbar" class="myNavbar">
+            <div class="myNavbar-content">
+                <div class="myNavbar-brand">
+                    <img src="~/Anh/thueXe.jpg" />
+                </div>
+                <div class="myNavbar-menu">
+                    <ul>
+                        <li>
+                            <a href="@Url.Action("Index", "Home")" style="color:#ff6a00">TRANG CHỦ</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("GioiThieu","GioiThieu")">GIỚI THIỆU</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("HuongDanChiTiet","Home")">HƯỚNG DẪN</a>
+                        </li>
+                        <li>
+                            <a href="#">THUÊ XE</a>
+                        </li>
+                        <li>
+                            <a href="#">LIÊN HỆ</a>
+                        </li>
+                    </ul>
+                    @Html.Action("GioHangPartial", "GioHang")
+                </div>
+                <div class="social">
+                    <div class="social-item fb-social">
+                        <i class="fa fa-facebook"></i>
+                    </div>
+                    <div class="social-item tw-social">
+                        <i class="fa fa-twitter"></i>
+                    </div>
+                    <div class="social-item gl-social">
+                        <i class="fa fa-google-plus"></i>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <!--End Menu-->
+        <!--Quang Cao-->
+        <div class="QuangCao">
+            <img src="~/Anh/xe4.jpg" />
+        </div>
+        <!--End Quang Cao-->
+        <!--Noi dung-->
+        <div class="NoiDung">
+            <div class="NoiDung-LuaChon">
+                @RenderBody()
+            </div>
+            <div class="NoiDung-SanPham">
+                @RenderSection("NoiDungBenPhai", false)
+            </div>
+        </div>
+        <!--End Noi dung-->
+        <!---hướng dẫn đặt xe-->
+        <div class="HuongDan">
+            <div class="HuongDan-content">
+                <h1>Hướng dẫn thuê xe</h1>
+            </div>
+            <div class="HuongDan-item">
+                <div class="HuongDan-item-img">
+                    <img src="~/HinhAnhHuongDanThue/datxe1.jpg" />
+                    <p>Đăng Nhập đặt xe</p>
+                </div>
+                <div class="HuongDan-item-img">
+                    <img src="~/HinhAnhHuongDanThue/nhanxe1.jpg" />
+                    <p>Nhận xe hoặc giao tận nơi</p>
+                </div>
+                <div class="HuongDan-item-img">
+                    <img src="~/HinhAnhHuongDanThue/lai.png" />
+                    <p>Trải nghiệm chuyến đi</p>
+                </div>
+                <div class="HuongDan-item-img">
+                    <img src="~/HinhAnhHuongDanThue/traxe1.jpg" />
+                    <p>Kết thúc giao dịch</p>
+                </div>
+
+            </div>
+
+            <div>
+                <div class="ChiTiet"><a href="@Url.Action("HuongDanChiTiet")">Xem thêm  >>></a></div>
+            </div>
+        </div>
+        <div style="clear:both"></div>
+        <!---end hướng dẫn đặt xe-->
+        <!--Thông tin cho thuê xe-->
+        <div id="ThongTin">
+            <div id="ThongTin-content">
+                <h3>THÔNG TIN CHO THUÊ XE</h3>
+                <div id="ThongTin1">
+                    <img src="~/HinhAnh/thongtin1.jpg" />
+                    <p><a href="https://vietnamnet.vn/vn/oto-xe-may/nhung-kinh-nghiem-mua-xe-o-to-phuc-vu-cho-gia-dinh-439959.html">Những kinh nghiệm mua xe ô tô phục vụ cho gia đình</a><br /><span>Chọn một chiếc xe hơi ''che nắng che mưa'' phù hợp phục vụ cho gia đình là điều mà phần lớn người mua xe ô tô đều quan tâm. Đây là các mục bạn cần cân nhắc</span></p>
+                </div>
+                <div id="ThongTin1">
+                    <img src="~/HinhAnh/thongtin2.jpg" />
+                    <p><a href="https://vietnamnet.vn/vn/oto-xe-may/10-loi-tai-xe-viet-hay-mac-phai-va-muc-phat-di-kem-439677.html">10 Lỗi tài xế Việt hay mắc phải và mức phạt đi kèm</a><br /><span>Lỗi quay đầu xe sai quy định bao gồm: quay đầu xe ở phần đường dành cho người đi bộ qua đường, trên cầu, đầu cầu, gầm cầu vượt, ngầm, đường hẹp, đường dốc...</span></p>
+                </div>
+                <div id="ThongTin1">
+                    <img src="~/HinhAnh/thongtin3.jpg" />
+                    <p><a href="https://www.24h.com.vn/o-to/so-sanh-ke-thach-thuc-honda-city-va-thanh-ban-chay-toyota-vios-c747a950660.html">So sánh kẻ thách thức Honda City và thánh bán chạy Toyota Vios</a><br /><span>Với việc điều chỉnh giá bán về mức 599 triệu đồng, Honda thể hiện rõ quyết tâm cạnh tranh trực tiếp với Toyota Vios</span></p>
+                </div>
+            </div>
+        </div>
+        <div style="clear:both"></div>
+        <!-- End Thông tin cho thuê xe-->
+        <!---footer-->
+        <div class="footer">
+            <h1>
+                Công ty cho thuê Xe
+            </h1>
+                <div class="Footer-menu">
+                    <ul>
+                        <li>
+                            <a href="@Url.Action("Index", "Home")">TRANG CHỦ</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("GioiThieu","GioiThieu")">GIỚI THIỆU</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("HuongDanChiTiet","Home")">HƯỚNG DẪN</a>
+                        </li>
+                        <li>
+                            <a href="#">THUÊ XE</a>
+                        </li>
+                        <li>
+                            <a href="#">LIÊN HỆ</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-ul">
+                    <ul >
+                        <li>Địa chỉ:Số 87, đường Nguyễn Thị Minh Khai, phường Hưng Bình,Tp Vinh,tỉnh Nghệ An.</li>
+                        <li>Mã số thuế:0378456910</li>
+                        <li>Email: uytin.37@gmail.com</li>
+                        <li>Điện thoại: 0987654321</li>
+                        <li>Tên TK: Lữ Bố</li>
+                        <li>Số TK:9999998888</li>
+                        <li>Ngân Hàng Viettinbank chi nhánh Vinh</li>
+                    </ul>
+                </div>
+        </div>
+        <!---and footer-->
+    </div>
+</body>
+</html>

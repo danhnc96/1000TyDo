@@ -1,0 +1,30 @@
+﻿@using QLThueXeOto.Models;
+@model List<GioHang>
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Layout/NguoiDungLayout.cshtml";
+}
+
+<h2>GioHang</h2>
+<table border="1">
+    <tr>
+        <td>Mã Xe</td>
+        <td>Biển Số</td>
+        <td>Hình Ảnh</td>
+        <td>Đơn Giá</td>
+        <td>Số Lượng</td>
+        <td>Thành Tiền</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.iMaXe</td>
+            <td>@item.sTenXe</td>
+            <td><a href="@Url.Action("ChiTietXe", "ChiTietXe", new { @MaXe=item.iMaXe})"><img src="@Url.Content("~/HinhAnh/" + item.sHinhAnh)" width="70" height="50" /></a></td>
+            <td>@string.Format("{0:0,0}", item.dDonGia) VNĐ</td>
+            <td>@item.iSoLuong</td>
+            <td>@string.Format("{0:0,0}", item.ThanhTien) VNĐ</td>
+        </tr>
+    }
+</table>
+@Html.ActionLink("Chinh Sua Gio Hang", "SuaGioHang")
